@@ -1,0 +1,101 @@
+
+<%- include('partials/head', { title }) %>
+
+<body>
+    <div class="dashboard-layout">
+
+        <%- include('partials/sidebar') %>
+
+        <div class="main-content">
+
+            <%- include('partials/header', { environment }) %>
+
+            <main class="dashboard">
+
+                <section class="welcome">
+                    <div>
+                        <span class="welcome-label">CLOUD OPERATIONS CENTER</span>
+                        <h2>Good to see you!</h2>
+                        <p>Here's an overview of your application environment.</p>
+                    </div>
+                </section>
+
+                <section class="metrics-section">
+
+                    <div class="section-heading">
+                        <div>
+                            <h2>Application Overview</h2>
+                            <p>Your application's current runtime information.</p>
+                        </div>
+                        <span class="live-indicator">
+                            <span></span>
+                            Live data
+                        </span>
+                    </div>
+
+                    <div class="metrics-grid">
+
+                        <article class="metric-card purple-card">
+                            <div class="metric-top">
+                                <span>Application Status</span>
+                                <i class="fa-solid fa-heart-pulse"></i>
+                            </div>
+                            <h3 id="appStatus"><%= systemInfo.status %></h3>
+                            <p>Current application state</p>
+                        </article>
+
+                        <article class="metric-card cyan-card">
+                            <div class="metric-top">
+                                <span>Node.js Runtime</span>
+                                <i class="fa-brands fa-node-js"></i>
+                            </div>
+                            <h3 id="nodeRuntime"><%= systemInfo.runtime %></h3>
+                            <p>Running runtime version</p>
+                        </article>
+
+                        <article class="metric-card green-card">
+                            <div class="metric-top">
+                                <span>Application Uptime</span>
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <h3 id="appUptime"><%= systemInfo.uptime %>s</h3>
+                            <p>Time since application started</p>
+                        </article>
+
+                        <article class="metric-card orange-card">
+                            <div class="metric-top">
+                                <span>Environment</span>
+                                <i class="fa-solid fa-code-branch"></i>
+                            </div>
+                            <h3 id="appEnvironment"><%= systemInfo.environment %></h3>
+                            <p>Current deployment environment</p>
+                        </article>
+
+                    </div>
+                </section>
+
+                <section class="monitoring-overview">
+                    <div class="section-heading">
+                        <div>
+                            <h2>Monitoring Workspace</h2>
+                            <p>Your infrastructure monitoring tools will appear here.</p>
+                        </div>
+                        <i class="fa-solid fa-chart-line overview-icon"></i>
+                    </div>
+
+                    <div class="workspace-empty">
+                        <i class="fa-solid fa-chart-area"></i>
+                        <h3>Monitoring starts here</h3>
+                        <p>We'll connect real system metrics, performance charts and infrastructure health data as we build the monitoring features.</p>
+                    </div>
+                </section>
+
+            </main>
+
+            <%- include('partials/footer') %>
+
+        </div>
+    </div>
+</body>
+<script src="/js/dashboard.js" defer></script>
+</html>

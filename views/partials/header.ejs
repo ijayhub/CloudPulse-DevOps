@@ -1,0 +1,34 @@
+
+<header class="topbar">
+    <div class="page-heading">
+        <h1>Cloud Operations</h1>
+        <p>Monitor your application and infrastructure</p>
+        <p class="last-updated">
+            Last updated: <span id="lastUpdated">Waiting...</span>
+        </p>
+    </div>
+
+    <div class="topbar-actions">
+
+        <div class="connection-status">
+            <span class="connection-dot" id="connectionDot"></span>
+            <span id="connectionText">Connecting...</span>
+        </div>
+
+        <div class="environment">
+            <span class="environment-indicator"></span>
+            <span><%= environment %></span>
+        </div>
+
+        <button
+            type="button"
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Switch colour theme"
+            title="Switch colour theme"
+        >
+            <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+
+    </div>
+</header>
